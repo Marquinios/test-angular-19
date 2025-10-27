@@ -1,0 +1,16 @@
+<h3>{{listName()}}</h3>
+<ul>
+    @for (item of characters(); track item.id; let idx = $index ) {
+    <li>
+        @if (item.power > 1000) {
+        <span>{{idx + 1}} - {{item.name}}</span>
+        <strong [class.text-danger]="item.power > 9000" [class.text-info]="item.power < 9000">
+            <!-- <strong [ngClass]="powerClasses()"> -->
+            {{item.power}}
+        </strong>
+        } @else {
+        <strong>Aqui no hay nada.</strong>
+        }
+    </li>
+    }
+</ul>
