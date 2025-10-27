@@ -17,13 +17,14 @@ jobs:
         with:
           node-version: 22
 
-      - name: Build Angular app to prod
-        working-directory: github-option-three-app
-        run: npm install && npm run build:prod
+      - name: Install dependencies and build Angular app
+        run: |
+          npm install
+          npm run build
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: github-option-three-app/dist/browser
           branch: prod
+          folder: dist/angular-19-fernando-herrera/browser
           token: ${{ secrets.GH_TOKEN }}
