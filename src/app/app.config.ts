@@ -11,10 +11,10 @@ export const appConfig: ApplicationConfig = {
     provideRouter(routes),
 
     // HashStrategy
-    {
+    /* {
       provide: LocationStrategy,
       useClass: HashLocationStrategy
-    }
+    } */
 
     /* 
     Es un indicador para que cualquier URL pase por el path root => /
